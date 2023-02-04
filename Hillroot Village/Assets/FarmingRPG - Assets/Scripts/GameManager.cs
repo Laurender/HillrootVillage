@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     public CropData selectedCropToPlant;
 
-    //public event UnityAction onNewDay;
+    public event UnityAction onNewDay;
+
 
     //Singleton
     public static GameManager instance;
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        if(instance == null)
+            Debug.Log(onNewDay);
     }
 
     public void SetNextDay()

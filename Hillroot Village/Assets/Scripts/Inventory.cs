@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 	public bool hasSeed = false;
 	public bool hasWater = false;
 	public bool noItems = true;
-
+	public int CarrotCounter = 0;
 	void Start()
 	{
 
