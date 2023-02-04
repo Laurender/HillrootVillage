@@ -11,16 +11,19 @@ public class RenderTiles : MonoBehaviour
 
 	private float counter;
 	private float counter2;
+	private float counter3;
 
 	void Start()
 	{
+		counter3 = 4;
 		for(counter2 = 0; counter2 < fieldsAmountVertical; counter2++)
 		{
-			for(counter = 0; counter < fieldsAmountHorizontal; counter++)
+			for(counter = counter3; counter < fieldsAmountHorizontal + counter3; counter++)
 			{
 				var add = new Vector3(transform.position.x + counter, transform.position.y - counter2, 0);
 				Instantiate(fieldPrefab, add, fieldPrefab.transform.rotation).SetActive(true);
 			}
+			counter3 -= 1;
 		}
 		//Debug.Log(transform.position.x);
 	}

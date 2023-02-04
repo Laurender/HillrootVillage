@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public CropData selectedCropToPlant;
     public TextMeshProUGUI statsText;
 
-    public event UnityAction onNewDay;
+    //public event UnityAction onNewDay;
 
     //Singleton
     public static GameManager instance;

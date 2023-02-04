@@ -7,16 +7,17 @@ public class Inventory : MonoBehaviour
 	public bool hasHoe = false;
 	public bool hasSeed = false;
 	public bool hasWater = false;
+	public bool noItems = true;
+
 	void Start()
 	{
-		//hasHoe = true;
-		hasSeed = true;
-		if(hasHoe && hasSeed && hasWater)
-			Debug.Log("hasHoe");
+
 	}
 
 	void Update()
 	{
-		
+		if(hasHoe && hasSeed && hasWater)
+			Debug.Log("hasAll");
 	}
+
 }
