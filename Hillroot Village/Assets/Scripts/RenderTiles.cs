@@ -22,7 +22,7 @@ public class RenderTiles : MonoBehaviour
 				Instantiate(fieldPrefab, add, fieldPrefab.transform.rotation).SetActive(true);
 			}
 		}
-		Debug.Log(transform.position.x);
+		//Debug.Log(transform.position.x);
 	}
 
 	// Update is called once per frame
