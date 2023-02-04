@@ -50,21 +50,40 @@ public class FieldTile : MonoBehaviour
         }
 
         curCrop = Instantiate(cropPrefab, transform).GetComponent<Crop>();
+        curCrop.Plant(crop);
+
+        GameManager.instance.onNewDay += OnNewDay;
     }
 
     void Till()
     {
-
+        tilled = true;
+        sr.sprite = tilledSprite;
     }
 
     void Water()
     {
-
+        sr.sprite = wateredTilledSprite;
+        if (HasCrop())
+        {
+            curCrop.Water();
+        }
     }
 
     void OnNewDay()
     {
+        if(curCrop == null)
+        {
+            tilled = false;
+            sr.sprite = grassSprite;
 
+            GameManager.instance.onNewDay -= OnNewDay;
+        }
+        else if(curCrop != null)
+        {
+            sr.sprite = tilledSprite;
+            curCrop.NewDayCheck();
+        }
     }
 
     bool HasCrop()

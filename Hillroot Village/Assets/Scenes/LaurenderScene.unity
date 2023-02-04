@@ -4415,9 +4415,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curDay: 0
-  money: 0
-  cropInventory: 0
-  selectedCropToPlant: {fileID: 0}
+  money: 100
+  cropInventory: 4
+  selectedCropToPlant: {fileID: 11400000, guid: dc80ad480afd584429e465c049120d3e, type: 2}
 --- !u!4 &869849275
 Transform:
   m_ObjectHideFlags: 0
