@@ -6,20 +6,21 @@ public class Cropfield : MonoBehaviour
 {
 	public Transform player;
 	public int numb;
+	public Inventory s2;
 
-	bool m_IsPlayerInRange;
-
+	private bool m_IsPlayerInRange;
 	SpriteRenderer rendererr;
-	// Start is called before the first frame update
+
 	void Start()
 	{
 		numb = 0;
+		s2 = GameObject.Find("Inventory").GetComponent<Inventory> ();
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
 		rendererr = GetComponent<SpriteRenderer> ();
+		
 		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange)
 		{
 			Debug.Log("space #" + numb);
@@ -30,11 +31,11 @@ public class Cropfield : MonoBehaviour
 				Debug.Log("get carrot");
 				numb = 0;
 			}
-			if(numb == 2 /*&& water*/)
+			if(numb == 2 && s2.hasWater)
 				numb += 1;
-			if(numb == 1 /*&& hasSeed*/)
+			if(numb == 1 && s2.hasSeed)
 				numb += 1;
-			if(numb == 0 /*&& hasHoe*/)
+			if(numb == 0 && s2.hasHoe)
 				numb += 1;
 
 
@@ -47,20 +48,13 @@ public class Cropfield : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		
 		if(other.transform == player)
-		{
-			//Debug.Log("inRange");
 			m_IsPlayerInRange = true;
-		}
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.transform == player)
-		{
-			//Debug.Log("outofRange");
 			m_IsPlayerInRange = false;
-		}
 	}
 }
