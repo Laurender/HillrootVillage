@@ -41,6 +41,6 @@ public class Crop : MonoBehaviour
 
     int CropProgress()
     {
-
+        return 0;
     }
 }
