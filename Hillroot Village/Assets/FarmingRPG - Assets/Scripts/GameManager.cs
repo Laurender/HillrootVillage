@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public CropData selectedCropToPlant;
 
-    public event UnityAction onNewDay;
+    //public event UnityAction onNewDay;
 
     //Singleton
     public static GameManager instance;
