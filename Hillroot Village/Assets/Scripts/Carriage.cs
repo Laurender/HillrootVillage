@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : MonoBehaviour
+public class Carriage : MonoBehaviour
 {
 	public Transform player;
 	private Inventory s2;
+
+	public int carrotPrice = 10;
 	private bool m_IsPlayerInRange;
 	void Start()
 	{
@@ -14,22 +16,14 @@ public class Water : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange)
+		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange && s2.CarrotCounter > 0)
 		{
-			if(!s2.hasWater && s2.noItems)
-			{
-				s2.hasWater = true;
-				s2.noItems = false;
-				s2.energy -= 1;
-			}
-			else if(s2.hasWater && !s2.noItems)
-			{
-				s2.hasWater = false;
-				s2.noItems = true;
-			}
+			Debug.Log("Carrot checkout");
+			s2.Money += carrotPrice * s2.CarrotCounter;
+			s2.CarrotCounter = 0;
 		}
 	}
-		
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.transform == player)

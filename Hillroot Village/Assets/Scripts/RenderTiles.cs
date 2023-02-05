@@ -13,6 +13,11 @@ public class RenderTiles : MonoBehaviour
 	private float counter2;
 	private float counter3;
 
+	void Awake()
+	{
+		DontDestroyOnLoad(gameObject);
+	}
+
 	void Start()
 	{
 		counter3 = 4;

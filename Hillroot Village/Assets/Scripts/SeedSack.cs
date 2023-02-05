@@ -20,6 +20,7 @@ public class SeedSack : MonoBehaviour
 			{
 				s2.hasSeed = true;
 				s2.noItems = false;
+				s2.energy -= 1;
 			}
 			else if(s2.hasSeed && !s2.noItems)
 			{

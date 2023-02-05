@@ -8,16 +8,21 @@ public class Inventory : MonoBehaviour
 	public bool hasSeed = false;
 	public bool hasWater = false;
 	public bool noItems = true;
-	public int CarrotCounter = 0;
-	void Start()
-	{
+	public bool newday = true;
+	public bool newnoon = true;
 
+	public int day = 1;
+	public int energy = 21;
+	public int CarrotCounter = 0;
+	public int Money = 0;
+	
+	void Awake()
+	{
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Update()
 	{
-		if(hasHoe && hasSeed && hasWater)
-			Debug.Log("hasAll");
 	}
 
 }

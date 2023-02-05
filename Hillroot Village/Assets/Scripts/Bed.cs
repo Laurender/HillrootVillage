@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : MonoBehaviour
+public class Bed : MonoBehaviour
 {
 	public Transform player;
 	private Inventory s2;
+
 	private bool m_IsPlayerInRange;
+	public int energyIncrease = 3;
+
 	void Start()
 	{
 		s2 = GameObject.Find("Inventory").GetComponent<Inventory> ();
@@ -16,20 +19,14 @@ public class Water : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange)
 		{
-			if(!s2.hasWater && s2.noItems)
-			{
-				s2.hasWater = true;
-				s2.noItems = false;
-				s2.energy -= 1;
-			}
-			else if(s2.hasWater && !s2.noItems)
-			{
-				s2.hasWater = false;
-				s2.noItems = true;
-			}
+			s2.day += 1;
+			Debug.Log("You go to sleep");
+			s2.newnoon = true;
+			s2.newday = true;
+			s2.energy = 21 + energyIncrease * (s2.day - 1);
 		}
 	}
-		
+	
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.transform == player)

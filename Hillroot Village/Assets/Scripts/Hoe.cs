@@ -20,6 +20,7 @@ public class Hoe : MonoBehaviour
 			{
 				s2.hasHoe = true;
 				s2.noItems = false;
+				s2.energy -= 1;
 			}
 			else if(s2.hasHoe && !s2.noItems)
 			{
