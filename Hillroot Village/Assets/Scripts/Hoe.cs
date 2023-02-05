@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hoe : MonoBehaviour
 {
 	public Transform player;
+	public GameObject hoe;
 	private Inventory s2;
 	private bool m_IsPlayerInRange;
 	void Start()
@@ -14,18 +15,20 @@ public class Hoe : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange)
+		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange && s2.energy != 0)
 		{
 			if(!s2.hasHoe && s2.noItems)
 			{
 				s2.hasHoe = true;
 				s2.noItems = false;
 				s2.energy -= 1;
+				hoe.SetActive(false);
 			}
 			else if(s2.hasHoe && !s2.noItems)
 			{
 				s2.hasHoe = false;
 				s2.noItems = true;
+				hoe.SetActive(true);
 			}
 		}
 	}

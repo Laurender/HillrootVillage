@@ -12,10 +12,20 @@ public class RenderTiles : MonoBehaviour
 	private float counter;
 	private float counter2;
 	private float counter3;
+	public static RenderTiles instance;
 
 	void Awake()
 	{
-		DontDestroyOnLoad(gameObject);
+		if (instance != null && instance != this)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+
+		}
 	}
 
 	void Start()

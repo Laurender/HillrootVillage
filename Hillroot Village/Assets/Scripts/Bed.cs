@@ -20,6 +20,7 @@ public class Bed : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Space) && m_IsPlayerInRange)
 		{
 			s2.day += 1;
+			s2.UpdateStatsText();
 			Debug.Log("You go to sleep");
 			s2.newnoon = true;
 			s2.newday = true;

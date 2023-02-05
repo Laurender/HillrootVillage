@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 	public float horizontalInput;
 	public float verticalInput;
 	public float speed = 4f;
+	public SpriteRenderer sr;
+	public Sprite[] walkSprites;
+	public Sprite[] interactSprites;
 
 	Rigidbody2D bod;
 
@@ -25,6 +28,20 @@ public class PlayerMovement : MonoBehaviour
 		transform.Translate(Vector2.up * Time.deltaTime * speed * verticalInput);
 		var position = new Vector3(transform.position.x, transform.position.y, 0);
 		bod.MovePosition(position);															//Move the rigidbody to where the model is for the purpose of trigger events
+
+		if(verticalInput > 0.15f)
+        {
+			sr.sprite = walkSprites[0];
+        } else if(verticalInput < -0.15f)
+        {
+			sr.sprite = walkSprites[1];
+		} else if(horizontalInput > 0.15f)
+        {
+			sr.sprite = walkSprites[2];
+		} else if(horizontalInput < -0.15f)
+        {
+			sr.sprite = walkSprites[3];
+		}
 
 		if(SceneManager.GetActiveScene () == SceneManager.GetSceneByName("YardScene"))		//Pelialueen rajat pihalla
 		{

@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563dc4d73d09b1f4f8cae060addb6e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7039807425253644774, guid: 33ffc0b51727cf64e8a1272631b3ff04, type: 3}
   numb: 0
-  s2: {fileID: 0}
+  numberOfCarrotsPerPatch: 1
+  sprites:
+  - {fileID: 21300000, guid: bda87cdcf07373843b57a6e7f2175d9a, type: 3}
+  - {fileID: 21300000, guid: e565a09b416b78b4ea378fdf34e919b2, type: 3}
+  - {fileID: 21300000, guid: 8ffba01e518cd8e4d903602869430ae5, type: 3}
+  - {fileID: 21300000, guid: 9b55865e546722e478fc989400d662c0, type: 3}

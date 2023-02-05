@@ -21,6 +21,7 @@ public class Carriage : MonoBehaviour
 			Debug.Log("Carrot checkout");
 			s2.Money += carrotPrice * s2.CarrotCounter;
 			s2.CarrotCounter = 0;
+			s2.UpdateStatsText();
 		}
 	}
 

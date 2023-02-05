@@ -18,7 +18,7 @@ public class SpawnFood : MonoBehaviour
 	{
 		if(s2.newday)
 		{
-			var pos = new Vector3(7.63f, 0.8f, 0f);
+			var pos = new Vector3(7.63f, 1.01f, 0f);
 			Instantiate(food, pos, food.transform.rotation).SetActive(true);
 			s2.newday = false;
 		}
